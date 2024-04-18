@@ -13,6 +13,9 @@ public class Sketch extends PApplet {
     // x and y coordinate for cube
     float fltCubeX = 50;
     float fltCubeY = 100;
+    // x and y coordinate for background
+    float fltTravX = 0;
+    float fltTravY = 0;
   
     // dog speed variables
     float fltXSpeed = random(1, 100);
@@ -35,6 +38,11 @@ public class Sketch extends PApplet {
       // resize dog
       
       imgWeirdDog.resize(80, 80);
+
+      //load backgroudn
+      imgTrav = loadImage("tsfishcover.png");
+      //resize dog
+      imgTrav.resize(400,400);
       
       
     }
@@ -44,9 +52,10 @@ public class Sketch extends PApplet {
     
   
     public void draw() {
+      
       //background image;
-      imgTrav = loadImage("tsfishcover.png");
-      imgTrav.resize
+      image(imgTrav,fltTravX,fltTravY);
+
   
       // draw dog and move
       image(imgWeirdDog, fltWeirdDogX, fltWeirdDogY);
